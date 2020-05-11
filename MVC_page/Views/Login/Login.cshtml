@@ -1,0 +1,145 @@
+﻿@model MVC_page.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.5.0.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    @Styles.Render("~/css/layui")
+    @Scripts.Render("~/js/layui")
+    @{
+        var page = ViewBag.page;
+    }
+    <link href="~/Content/css/Register.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+        $(function () {
+            $("#btn").click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Login/submit",
+                    data: {
+                        Name: $("#name").val(),
+                        Email: $("#email").val(),
+                        password:$("#password").val()
+                    },
+                    async: false,
+                    dataType: "text",
+                    success: function (data) {
+                        alert(data)
+                        window.location.href = "@Url.Action("Index","Home", new { id = ViewBag.user })";//Jump home
+
+                        @*$.ajax({
+                            type: 'POST',
+                            url: "/Login/GetUserId",
+                            data: {
+                                id:data,
+                            },
+                            dataType: "text",
+                            success: function (result) {
+                                alert("good")
+                                window.location.href = "@Url.Action("Index","Home",new { id = ViewBag.user})";//Jump home
+                            },
+                           
+                        });*@
+
+                    },
+                });
+            });
+        });
+
+        layui.use('form', function () {
+            var form = layui.form;
+
+            //监听提交
+            form.on('submit(formDemo)', function (data) {
+                layer.msg("SUCCESS");
+
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div id="main">
+
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">Email</label>
+                <div class="layui-input-block">
+                    <input id="email" type="text" name="title" required lay-verify="required" placeholder="Please Enter Your Email" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">Name</label>
+                <div class="layui-input-block">
+                    <input id="name" type="text" name="title" required lay-verify="required" placeholder="Please Enter Your Name" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">Password</label>
+                <div class="layui-input-block">
+                    <input id="password" type="text" name="title" required lay-verify="required" placeholder="Please Enter Your password" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">Country</label>
+                <div class="layui-input-block">
+                    <select  id="country"  name="country">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">You Job</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="like[write]" title="Student">
+                    <input type="checkbox" name="like[read]" title="Company" checked>
+                    <input type="checkbox" name="like[dai]" title="Developer">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">Gender</label>
+                <div id="gender" class="layui-input-block">
+                    <input type="radio" name="sex" value="Male" title="Male">
+                    <input type="radio" name="sex" value="Female" title="Female" checked>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">Profile</label>
+                <div class="layui-input-block">
+                    <textarea id="discribe" name="desc" placeholder="Discribe Yousele" class="layui-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button id="btn" class="layui-btn" lay-submit lay-filter="formDemo">Submit</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">Replace</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

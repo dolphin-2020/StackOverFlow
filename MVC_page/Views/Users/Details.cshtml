@@ -1,0 +1,114 @@
+﻿@model MVC_page.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>User</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.reputation)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.reputation)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ErrorPasswordTimes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ErrorPasswordTimes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ErrorTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ErrorTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountCreatTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AccountCreatTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LastVisiteTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LastVisiteTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.headImgPath)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.headImgPath)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.backImgPath)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.backImgPath)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AboutMe)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AboutMe)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

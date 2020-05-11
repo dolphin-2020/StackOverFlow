@@ -1,0 +1,56 @@
+﻿@model MVC_page.Vote
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Vote</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.voteType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.voteType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Answer.content)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Answer.content)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.User.Name)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

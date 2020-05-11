@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddAnswer</title>
+</head>
+<body>
+    <div style="width:35%;height:10px;float:left"></div>
+    <div style="width:30%;float:left;text-align:center">
+        @using (Html.BeginForm())
+        {
+            <h4>Content:</h4> @Html.TextArea("content");
+            <br />
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddAnswer</title>
+</head>
+<body>
+    <div style="width:35%;height:10px;float:left"></div>
+    <div style="width:30%;float:left;text-align:center">
+        <h1 style="color:red">ASK</h1>
+        @using (Html.BeginForm())
+        {
+            <h4>Title:</h4> @Html.TextArea("title");
+            <h4>Content:</h4> @Html.TextArea("content");
+            <br /><br /><br />
+
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="C#" />C#</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="Javascript" />Javascript</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="JAVA" />JAVA</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="C/C++" />C/C++</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="Dart" />Dart</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="Html" />Html</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="CSS" />CSS</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="Golang" />Golang</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="Ruby" />Ruby</label>
+            <label style="float:left;margin-right:2em;"> <input type="checkbox" value="Rust" />Rust</label>
+            <br /><br /><br /><br />
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>
+
+

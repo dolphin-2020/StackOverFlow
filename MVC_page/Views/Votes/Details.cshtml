@@ -1,0 +1,50 @@
+﻿@model MVC_page.Vote
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Vote</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.voteType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.voteType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Answer.content)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Answer.content)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.User.Name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

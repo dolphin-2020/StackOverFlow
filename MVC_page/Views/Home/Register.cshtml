@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddAnswer</title>
+</head>
+<body>
+    <div style="width:35%;height:10px;float:left"></div>
+    <div style="width:30%;float:left;text-align:center">
+        @using (Html.BeginForm())
+        {
+            <h1 style="color:red">Register</h1>
+            <h4>Name:</h4> @Html.TextArea("Name");
+            <h4>Email:</h4> @Html.TextArea("Email");
+            <h4>Password:</h4> @Html.TextArea("Password");
+            <h4>AboutMe:</h4> @Html.TextArea("AboutMe");
+            <br />
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>
